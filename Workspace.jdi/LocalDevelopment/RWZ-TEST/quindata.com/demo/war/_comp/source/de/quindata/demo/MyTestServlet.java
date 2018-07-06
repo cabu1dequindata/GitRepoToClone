@@ -25,11 +25,7 @@ public class MyTestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// test comment
-<<<<<<< HEAD
-		// test comment6
-=======
-		// test comment 3
->>>>>>> ac16de811116a3bc16d3b0759c19805b89f7f2e9
+		// test comment10
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
