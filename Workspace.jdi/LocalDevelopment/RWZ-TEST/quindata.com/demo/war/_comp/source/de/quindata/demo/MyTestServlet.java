@@ -25,7 +25,7 @@ public class MyTestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// test comment
-		// test comment4
+		// test comment5
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
