@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd">
+  <display-name>LocalDevelopment~demo~ear~quindata.com</display-name>
+  <module>
+    <web>
+      <web-uri>quindata.com~demo~war.war</web-uri>
+      <context-root>demo</context-root>
+    </web>
+  </module>
+</application>

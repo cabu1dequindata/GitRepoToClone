@@ -1,0 +1,151 @@
+Type: simple  ID: 1530884676962_0Url: devconf://LocalDevelopment?importId=LocalDevelopment  Domain: Component Model  End Time: 1530884676962  Start Time: 1530884676962  Action: Logon  Message: Logon successful  Object Name: LocalDevelopment  Severity:   
+
+Type: nested  ID: 1530884688712_0Url:   Domain: Component Model  End Time: -1  Start Time: 1530884688712  Action: Check  Message: (Preview) Import Software Component   Object Name:   Severity: Info  
+
+Type: nested  Parent ID: 1530884688712_0  ID: 1530884688728_0Url:   Domain: Component Model  End Time: -1  Start Time: 1530884688728  Action: Check  Message: Found 4 source archive(s)  Object Name:   Severity: Info  
+
+Type: simple  Parent ID: 1530884688728_0  ID: 1530884688821_0Url:   Domain: Component Model  End Time: 1530884688821  Start Time: 1530884688821  Action: Check  Message: Found DC demo/ear [quindata.com]  Object Name:   Severity: Info  
+
+Type: simple  Parent ID: 1530884688728_0  ID: 1530884688821_1Url:   Domain: Component Model  End Time: 1530884688821  Start Time: 1530884688821  Action: Check  Message: Found DC demo/portal [quindata.com]  Object Name:   Severity: Info  
+
+Type: simple  Parent ID: 1530884688728_0  ID: 1530884688837_0Url:   Domain: Component Model  End Time: 1530884688837  Start Time: 1530884688837  Action: Check  Message: Found DC demo/war [quindata.com]  Object Name:   Severity: Info  
+
+Type: simple  Parent ID: 1530884688728_0  ID: 1530884688853_0Url:   Domain: Component Model  End Time: 1530884688853  Start Time: 1530884688853  Action: Check  Message: Found DC rwz-test [quindata.com]  Object Name:   Severity: Info  
+
+Type: nested  ID: 1530884690509_0Url:   Domain: Component Model  End Time: -1  Start Time: 1530884690509  Action: Import  Message: Import Software Component(s)  Object Name:   Severity: Info  
+
+Type: nested  Parent ID: 1530884690509_0  ID: 1530884690603_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&scv=quindata.com&sc=RWZ-TEST  Domain: Component Model  End Time: -1  Start Time: 1530884690603  Action: Import  Message: Import Source SC RWZ-TEST  Object Name: RWZ-TEST [quindata.com]  Severity: Info  
+
+Type: simple  Parent ID: 1530884690603_0  ID: 1530884690806_0Url:   Domain: Component Model  End Time: 1530884690806  Start Time: 1530884690806  Action: Import  Message: Imported source DC demo/portal [quindata.com]  Object Name:   Severity:   
+
+Type: simple  Parent ID: 1530884690603_0  ID: 1530884690884_0Url:   Domain: Component Model  End Time: 1530884690884  Start Time: 1530884690884  Action: Import  Message: Imported source DC rwz-test [quindata.com]  Object Name:   Severity:   
+
+Type: simple  Parent ID: 1530884690603_0  ID: 1530884690978_0Url:   Domain: Component Model  End Time: 1530884690978  Start Time: 1530884690978  Action: Import  Message: Imported source DC demo/ear [quindata.com]  Object Name:   Severity:   
+
+Type: simple  Parent ID: 1530884690603_0  ID: 1530884691103_0Url:   Domain: Component Model  End Time: 1530884691103  Start Time: 1530884691103  Action: Import  Message: Imported source DC demo/war [quindata.com]  Object Name:   Severity:   
+
+Type: nested  ID: 1530884702570_0Url: devconf://LocalDevelopment?importId=LocalDevelopment  Domain: Component Model  End Time: -1  Start Time: 1530884702570  Action: Refresh  Message: Refreshing archive sync states for configuration LocalDevelopment  Object Name: LocalDevelopment  Severity:   
+
+Type: nested  ID: 1530884704347_0Url:   Domain: Component Model  End Time: -1  Start Time: 1530884704347  Action: Sync  Message: Syncing Used DCs  Object Name:   Severity: Info  
+
+Type: nested  Parent ID: 1530884704347_0  ID: 1530884704347_1Url:   Domain: Component Model  End Time: -1  Start Time: 1530884704347  Action: Sync  Message: Sync Archives  Object Name:   Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884704800_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=epbc.prtpars._htmlb  Domain: Component Model  End Time: 1530884704800  Start Time: 1530884704800  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: epbc.prtpars._htmlb  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884704894_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fepbc%2fprt%2fapps  Domain: Component Model  End Time: 1530884704894  Start Time: 1530884704894  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/epbc/prt/apps  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884704941_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fexception  Domain: Component Model  End Time: 1530884704941  Start Time: 1530884704941  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/exception  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884705956_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fbp%2fscdef  Domain: Component Model  End Time: 1530884705956  Start Time: 1530884705956  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/bp/scdef  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884706081_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fjavatech  Domain: Component Model  End Time: 1530884706081  Start Time: 1530884706081  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/javatech  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884706191_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fjdoc%2futil  Domain: Component Model  End Time: 1530884706191  Start Time: 1530884706191  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/jdoc/util  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884706237_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fsettings  Domain: Component Model  End Time: 1530884706237  Start Time: 1530884706237  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/settings  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884706300_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fframework  Domain: Component Model  End Time: 1530884706300  Start Time: 1530884706300  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/framework  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884706347_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2futil  Domain: Component Model  End Time: 1530884706347  Start Time: 1530884706347  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/util  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884706394_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fi18n  Domain: Component Model  End Time: 1530884706394  Start Time: 1530884706394  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/i18n  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884708378_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fjlincbs  Domain: Component Model  End Time: 1530884708378  Start Time: 1530884708378  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/jlincbs  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884709534_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fextsql  Domain: Component Model  End Time: 1530884709534  Start Time: 1530884709534  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/extsql  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884709753_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fextsld  Domain: Component Model  End Time: 1530884709753  Start Time: 1530884709753  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/extsld  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884709831_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fxml  Domain: Component Model  End Time: 1530884709831  Start Time: 1530884709831  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/xml  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884709972_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fant  Domain: Component Model  End Time: 1530884709972  Start Time: 1530884709972  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/ant  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884710253_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2flm%2fsl%2fmetamodel  Domain: Component Model  End Time: 1530884710253  Start Time: 1530884710253  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/lm/sl/metamodel  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884710346_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fcore  Domain: Component Model  End Time: 1530884710346  Start Time: 1530884710346  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/core  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884710425_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fbp%2fenterpriseApplication  Domain: Component Model  End Time: 1530884710425  Start Time: 1530884710425  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/bp/enterpriseApplication  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884710471_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fbp%2fwebmodule  Domain: Component Model  End Time: 1530884710471  Start Time: 1530884710471  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/bp/webmodule  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884710534_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fanttasks  Domain: Component Model  End Time: 1530884710534  Start Time: 1530884710534  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/anttasks  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884710690_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fsltech  Domain: Component Model  End Time: 1530884710690  Start Time: 1530884710690  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/sltech  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884710753_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fvelocity  Domain: Component Model  End Time: 1530884710753  Start Time: 1530884710753  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/velocity  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884710815_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fjdoc  Domain: Component Model  End Time: 1530884710815  Start Time: 1530884710815  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/jdoc  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884710893_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fextddicdb  Domain: Component Model  End Time: 1530884710893  Start Time: 1530884710893  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/extddicdb  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884711128_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=com.sapportals.htmlb  Domain: Component Model  End Time: 1530884711128  Start Time: 1530884711128  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: com.sapportals.htmlb  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884711252_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=engine.jee5.facade  Domain: Component Model  End Time: 1530884711252  Start Time: 1530884711252  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: engine.jee5.facade  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884711314_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=engine.j2ee14.facade  Domain: Component Model  End Time: 1530884711314  Start Time: 1530884711314  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: engine.j2ee14.facade  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884711361_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fje%2fwebservices%2flib  Domain: Component Model  End Time: 1530884711361  Start Time: 1530884711361  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/je/webservices/lib  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884711439_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fepbc%2fprt%2fapi  Domain: Component Model  End Time: 1530884711439  Start Time: 1530884711439  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/epbc/prt/api  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884711486_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fextpcd  Domain: Component Model  End Time: 1530884711486  Start Time: 1530884711486  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/extpcd  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884711533_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2feptech  Domain: Component Model  End Time: 1530884711533  Start Time: 1530884711533  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/eptech  Severity: Info  
+
+Type: simple  Parent ID: 1530884704347_1  ID: 1530884711580_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=sap.com&dc=tc%2fbi%2fbp%2fportalapplication  Domain: Component Model  End Time: 1530884711580  Start Time: 1530884711580  Action: Sync  Message: Synchronized plain DCIA archive in variant "default"  Object Name: tc/bi/bp/portalapplication  Severity: Info  
+
+Type: nested  Parent ID: 1530884704347_0  ID: 1530884711611_0Url:   Domain: Component Model  End Time: -1  Start Time: 1530884711611  Action: Update Project  Message: Update Project Settings  Object Name:   Severity: Info  
+
+Type: nested  ID: 1530884711767_0Url:   Domain: Component Model  End Time: -1  Start Time: 1530884711767  Action: Build  Message: Building DCs(rwz-test [quindata.com], demo/ear [quindata.com], demo/war [quindata.com], demo/portal [quindata.com])  Object Name:   Severity:   
+
+Type: nested  Parent ID: 1530884711767_0  ID: 1530884711783_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fportal  Domain: Component Model  End Time: -1  Start Time: 1530884711783  Action: Build  Message: Building DC demo/portal  Object Name: demo/portal  Severity:   
+
+Type: simple  Parent ID: 1530884711783_0  ID: 1530884711799_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fportal  Domain: Component Model  End Time: 1530884711799  Start Time: 1530884711799  Action: null  Message: Starting cleanup of folder where DC build creates build results  Object Name: demo/portal  Severity: Info  
+
+Type: simple  Parent ID: 1530884711783_0  ID: 1530884711814_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fportal  Domain: Component Model  End Time: 1530884711814  Start Time: 1530884711814  Action: null  Message: Starting DC model check before build  Object Name: demo/portal  Severity: Info  
+
+Type: simple  Parent ID: 1530884711783_0  ID: 1530884711814_1Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fportal  Domain: Component Model  End Time: 1530884711814  Start Time: 1530884711814  Action: null  Message: DC "quindata.com/demo/portal (RWZ-TEST)" depends on deprecated DC sap.com/epbc.prtpars._htmlb (EP-BASIS) by using its public part default.  Object Name: demo/portal  Severity: Warning  
+
+Type: simple  Parent ID: 1530884711783_0  ID: 1530884711845_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fportal  Domain: Component Model  End Time: 1530884711845  Start Time: 1530884711845  Action: Build  Message: Starting build for quindata.com/demo/portal (RWZ-TEST) in variant "default"  Object Name: demo/portal  Severity: Info  
+
+Type: simple  Parent ID: 1530884711783_0  ID: 1530884714942_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fportal  Domain: Component Model  End Time: 1530884714942  Start Time: 1530884714942  Action: Build  Message: Built with warnings quindata.com/demo/portal (RWZ-TEST) in variant "default" (3.143 sec) :The Build finished successfully with warnings  Object Name: demo/portal  Severity: Warning  
+
+Type: nested  Parent ID: 1530884711767_0  ID: 1530884715005_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fwar  Domain: Component Model  End Time: -1  Start Time: 1530884715005  Action: Build  Message: Building DC demo/war  Object Name: demo/war  Severity:   
+
+Type: simple  Parent ID: 1530884715005_0  ID: 1530884715005_1Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fwar  Domain: Component Model  End Time: 1530884715005  Start Time: 1530884715005  Action: null  Message: Starting cleanup of folder where DC build creates build results  Object Name: demo/war  Severity: Info  
+
+Type: simple  Parent ID: 1530884715005_0  ID: 1530884715005_2Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fwar  Domain: Component Model  End Time: 1530884715005  Start Time: 1530884715005  Action: null  Message: Starting DC model check before build  Object Name: demo/war  Severity: Info  
+
+Type: simple  Parent ID: 1530884715005_0  ID: 1530884715020_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fwar  Domain: Component Model  End Time: 1530884715020  Start Time: 1530884715020  Action: Build  Message: Starting build for quindata.com/demo/war (RWZ-TEST) in variant "default"  Object Name: demo/war  Severity: Info  
+
+Type: simple  Parent ID: 1530884715005_0  ID: 1530884715708_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fwar  Domain: Component Model  End Time: 1530884715708  Start Time: 1530884715708  Action: Build  Message: Built with warnings quindata.com/demo/war (RWZ-TEST) in variant "default" (0.703 sec) :The Build finished successfully with warnings  Object Name: demo/war  Severity: Warning  
+
+Type: nested  Parent ID: 1530884711767_0  ID: 1530884715786_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fear  Domain: Component Model  End Time: -1  Start Time: 1530884715786  Action: Build  Message: Building DC demo/ear  Object Name: demo/ear  Severity:   
+
+Type: simple  Parent ID: 1530884715786_0  ID: 1530884715786_1Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fear  Domain: Component Model  End Time: 1530884715786  Start Time: 1530884715786  Action: null  Message: Starting cleanup of folder where DC build creates build results  Object Name: demo/ear  Severity: Info  
+
+Type: simple  Parent ID: 1530884715786_0  ID: 1530884715801_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fear  Domain: Component Model  End Time: 1530884715801  Start Time: 1530884715801  Action: null  Message: Starting DC model check before build  Object Name: demo/ear  Severity: Info  
+
+Type: simple  Parent ID: 1530884715786_0  ID: 1530884715801_1Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fear  Domain: Component Model  End Time: 1530884715801  Start Time: 1530884715801  Action: Build  Message: Starting build for quindata.com/demo/ear (RWZ-TEST) in variant "default"  Object Name: demo/ear  Severity: Info  
+
+Type: simple  Parent ID: 1530884715786_0  ID: 1530884716507_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fear  Domain: Component Model  End Time: 1530884716507  Start Time: 1530884716507  Action: Build  Message: Built with warnings quindata.com/demo/ear (RWZ-TEST) in variant "default" (0.721 sec) :The Build finished successfully with warnings  Object Name: demo/ear  Severity: Warning  
+
+Type: nested  Parent ID: 1530884711767_0  ID: 1530884716554_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=rwz-test  Domain: Component Model  End Time: -1  Start Time: 1530884716554  Action: Build  Message: Building DC rwz-test  Object Name: rwz-test  Severity:   
+
+Type: simple  Parent ID: 1530884716554_0  ID: 1530884716569_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=rwz-test  Domain: Component Model  End Time: 1530884716569  Start Time: 1530884716569  Action: null  Message: Starting cleanup of folder where DC build creates build results  Object Name: rwz-test  Severity: Info  
+
+Type: simple  Parent ID: 1530884716554_0  ID: 1530884716569_1Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=rwz-test  Domain: Component Model  End Time: 1530884716569  Start Time: 1530884716569  Action: null  Message: Starting DC model check before build  Object Name: rwz-test  Severity: Info  
+
+Type: simple  Parent ID: 1530884716554_0  ID: 1530884716585_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=rwz-test  Domain: Component Model  End Time: 1530884716585  Start Time: 1530884716585  Action: Build  Message: Starting build for quindata.com/rwz-test (RWZ-TEST) in variant "default"  Object Name: rwz-test  Severity: Info  
+
+Type: simple  Parent ID: 1530884716554_0  ID: 1530884717949_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=rwz-test  Domain: Component Model  End Time: 1530884717949  Start Time: 1530884717949  Action: Build  Message: Built with warnings quindata.com/rwz-test (RWZ-TEST) in variant "default" (1.395 sec) :The Build finished successfully with warnings  Object Name: rwz-test  Severity: Warning  
+
+Type: nested  Parent ID: 1530884711767_0  ID: 1530884718089_0Url:   Domain: Component Model  End Time: -1  Start Time: 1530884718089  Action: Update Project  Message: Update Project Settings  Object Name:   Severity: Info  
+
+Type: nested  ID: 1530884718792_0Url:   Domain: Component Model  End Time: -1  Start Time: 1530884718792  Action: Build  Message: Building DCs(demo/ear [quindata.com])  Object Name:   Severity:   
+
+Type: nested  Parent ID: 1530884718792_0  ID: 1530884719136_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fear  Domain: Component Model  End Time: -1  Start Time: 1530884719136  Action: Build  Message: Building DC demo/ear  Object Name: demo/ear  Severity:   
+
+Type: simple  Parent ID: 1530884719136_0  ID: 1530884719152_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fear  Domain: Component Model  End Time: 1530884719152  Start Time: 1530884719152  Action: null  Message: Starting cleanup of folder where DC build creates build results  Object Name: demo/ear  Severity: Info  
+
+Type: simple  Parent ID: 1530884719136_0  ID: 1530884719183_0Url: devconf://LocalDevelopment?importId=LocalDevelopment&dcv=quindata.com&dc=demo%2fear  Domain: Compo

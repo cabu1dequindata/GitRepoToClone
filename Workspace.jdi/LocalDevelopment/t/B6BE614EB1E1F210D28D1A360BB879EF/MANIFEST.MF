@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+DC-Name: demo/portal
+DC-SubType: Portal Application Standalone
+DC-Type: Enterprise Portal
+DC-Vendor: quindata.com
+Implementation-Title: demo/portal
+Implementation-Vendor: quindata.com
+Implementation-Version: localDevelopment 20180706134512
+SC-Name: RWZ-TEST
+SC-Vendor: quindata.com
+
+Name: build-information
+Build-Counter: 20180706134512
+Build-Date: 2018-07-06
+Build-Location: localDevelopment
+Build-Time: 15:45:12 GMT+02:00 (CEST)
+Created-By: DC BuildTool
+Source-Location: cabu1de@ham00797
+

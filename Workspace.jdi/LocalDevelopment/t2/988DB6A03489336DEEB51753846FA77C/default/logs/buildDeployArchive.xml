@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    development component
+                     name: rwz-test
+                   vendor: quindata.com
+                     type: Software Component Description
+                 sub-type: 
+              type-vendor: sap.com
+
+       software component
+                     name: RWZ-TEST
+                   vendor: quindata.com
+
+                 location: localDevelopment
+          source location: cabu1de@ham00797
+            build variant: default
+
+    building on ham00797, Windows 10/amd64, version 10.0
+    using Java VM 'Java HotSpot(TM) 64-Bit Server VM', version 25.171-b11 (Oracle Corporation)
+    build started at 2018-07-06 15:45:16 GMT+02:00 (CEST)
+
+    Build Plugin 'sap.com/tc/bi/bp/scdef', Version 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:28:22 +0100, CL245679)
+    detailed versions:
+    sap.com:tc/bi/anttasks#def     7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:47 +0100, CL245679)
+    sap.com:tc/bi/core#def         7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:28:22 +0100, CL245679)
+    sap.com:tc/bi/exception#def    7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:46 +0100, CL245679)
+    sap.com:tc/bi/extddicdb#def    7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:53 +0100, CL245679)
+    sap.com:tc/bi/extsld#def       7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:53 +0100, CL245679)
+    sap.com:tc/bi/extsql#def       7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:48 +0100, CL245679)
+    sap.com:tc/bi/framework#def    7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:03 +0100, CL245679)
+    sap.com:tc/bi/i18n#def         7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:41 +0100, CL245679)
+    sap.com:tc/bi/javatech#def     7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:43 +0100, CL245679)
+    sap.com:tc/bi/jdoc#def         7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:46 +0100, CL245679)
+    sap.com:tc/bi/jdoc/util#def    7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:30 +0100, CL245679)
+    sap.com:tc/bi/jlincbs#def      7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:27:16 +0100, CL245679)
+    sap.com:tc/bi/settings#version 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:25:32 +0100, CL245679)
+    sap.com:tc/bi/util#util        7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:14 +0100, CL245679)
+    sap.com:tc/bi/velocity#def     7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:40 +0100, CL245679)
+    sap.com:tc/bi/xml#def          7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:43 +0100, CL245679)
+ -->
+<project name="DC Deploy build"
+         default="packDeployArchive"
+         basedir=".">
+<taskdef name="ScdefGeneratorTask" classname="com.sap.tc.buildplugin.scdef.ScdefGeneratorTask"/>
+<taskdef name="jarsap" classname="com.sap.sdm.ant.JarSAP"/>
+<taskdef name="propertybag" classname="com.sap.tools.ant.taskdefs.PropertyBag"/>
+<taskdef name="srcpacker" classname="com.sap.tc.buildplugin.ant.taskdefs.SourceArchiveCreatorTask"/>
+<taskdef name="timer" classname="com.sap.tools.ant.taskdefs.Timer"/>
+<property name="dtr-workspace" value="cabu1de@ham00797"/>
+
+<target name="packDeployArchive">
+<timer/>
+<srcpacker destination="C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sda\src.zip" archiveLocation="srcarchive"/>
+<timer message="Source archive creation finished in "/>
+<timer/>
+<jarsap jarfile="C:\git\ws\Workspace.jdi\LocalDevelopment\t2\988DB6A03489336DEEB51753846FA77C\default\deploy\quindata.com~rwz-test.sda"
+        softwaresubtype="SL-SDA"
+        deployfile="C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sda\META-INF\sda-dd.xml"
+        csncomponent="NONE">
+<component vendor="quindata.com"
+           name="rwz-test"
+           location="localDevelopment"
+           counter="20180706134517"
+           scvendor="quindata.com"
+           scname="RWZ-TEST"/>
+<fileset dir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sda">
+<exclude name="**/*~"/>
+<exclude name="**/%*%"/>
+<exclude name="**/.#*"/>
+<exclude name="**/vssver.scc"/>
+<exclude name="**/.svn/**"/>
+<exclude name="**/.nfs*"/>
+<exclude name="**/CVS/**"/>
+<exclude name="**/._*"/>
+<exclude name="**/#*#"/>
+<exclude name="**/.cvsignore"/>
+<exclude name="**/SCCS/**"/>
+</fileset>
+<fileset dir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sld_pack01">
+<exclude name="**/*~"/>
+<exclude name="**/%*%"/>
+<exclude name="**/.#*"/>
+<exclude name="**/vssver.scc"/>
+<exclude name="**/.svn/**"/>
+<exclude name="**/.nfs*"/>
+<exclude name="**/CVS/**"/>
+<exclude name="**/._*"/>
+<exclude name="**/#*#"/>
+<exclude name="**/.cvsignore"/>
+<exclude name="**/SCCS/**"/>
+<exclude name="META-INF/sda-dd.xml"/>
+</fileset>
+</jarsap>
+<timer message="JarSAP finished in "/>
+</target>
+</project>

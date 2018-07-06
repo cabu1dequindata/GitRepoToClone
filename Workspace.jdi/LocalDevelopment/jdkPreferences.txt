@@ -1,0 +1,3 @@
+#JDK Properties for Configuration LocalDevelopment
+#Fri Jul 06 15:45:21 CEST 2018
+jdk_path_heuristic=C\:\\Program Files\\Java\\jdk1.8.0_171

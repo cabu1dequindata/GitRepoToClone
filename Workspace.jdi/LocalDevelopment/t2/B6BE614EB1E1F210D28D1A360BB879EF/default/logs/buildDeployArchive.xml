@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    development component
+                     name: demo/portal
+                   vendor: quindata.com
+                     type: Enterprise Portal
+                 sub-type: Portal Application Standalone
+              type-vendor: sap.com
+
+       software component
+                     name: RWZ-TEST
+                   vendor: quindata.com
+
+                 location: localDevelopment
+          source location: cabu1de@ham00797
+            build variant: default
+
+    building on ham00797, Windows 10/amd64, version 10.0
+    using Java VM 'Java HotSpot(TM) 64-Bit Server VM', version 25.171-b11 (Oracle Corporation)
+    build started at 2018-07-06 15:45:12 GMT+02:00 (CEST)
+
+    Build Plugin 'PortalAppPlugin', Version 7.10 SP 7 (NW750EXT_07_REL, built on 2017-02-25 02:19:02 +0100, CL245651)
+    detailed versions:
+    sap.com:tc/bi/anttasks#def             7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:47 +0100, CL245679)
+    sap.com:tc/bi/bp/portalapplication#def 7.10 SP 7 (NW750EXT_07_REL, built on 2017-02-25 02:19:02 +0100, CL245651)
+    sap.com:tc/bi/core#def                 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:28:22 +0100, CL245679)
+    sap.com:tc/bi/eptech#def               7.10 SP 7 (NW750EXT_07_REL, built on 2017-02-25 02:19:08 +0100, CL245651)
+    sap.com:tc/bi/exception#def            7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:46 +0100, CL245679)
+    sap.com:tc/bi/extddicdb#def            7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:53 +0100, CL245679)
+    sap.com:tc/bi/extpcd#def               7.10 SP 7 (NW750EXT_07_REL, built on 2017-02-25 02:19:01 +0100, CL245651)
+    sap.com:tc/bi/extsql#def               7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:48 +0100, CL245679)
+    sap.com:tc/bi/framework#def            7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:03 +0100, CL245679)
+    sap.com:tc/bi/i18n#def                 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:41 +0100, CL245679)
+    sap.com:tc/bi/javatech#def             7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:43 +0100, CL245679)
+    sap.com:tc/bi/jdoc#def                 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:46 +0100, CL245679)
+    sap.com:tc/bi/jdoc/util#def            7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:30 +0100, CL245679)
+    sap.com:tc/bi/jlincbs#def              7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:27:16 +0100, CL245679)
+    sap.com:tc/bi/settings#version         7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:25:32 +0100, CL245679)
+    sap.com:tc/bi/util#util                7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:14 +0100, CL245679)
+    sap.com:tc/bi/velocity#def             7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:40 +0100, CL245679)
+    sap.com:tc/bi/xml#def                  7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:43 +0100, CL245679)
+ -->
+<project name="DC Deploy build"
+         default="packDeployArchive"
+         basedir=".">
+<taskdef name="jarsap" classname="com.sap.sdm.ant.JarSAP"/>
+<taskdef name="propertybag" classname="com.sap.tools.ant.taskdefs.PropertyBag"/>
+<taskdef name="srcpacker" classname="com.sap.tc.buildplugin.ant.taskdefs.SourceArchiveCreatorTask"/>
+<taskdef name="timer" classname="com.sap.tools.ant.taskdefs.Timer"/>
+<property name="dtr-workspace" value="cabu1de@ham00797"/>
+
+<target name="packDeployArchive">
+<timer/>
+<srcpacker destination="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\sda\src.zip" archiveLocation="srcarchive"/>
+<timer message="Source archive creation finished in "/>
+<timer/>
+<jarsap jarfile="C:\git\ws\Workspace.jdi\LocalDevelopment\t2\B6BE614EB1E1F210D28D1A360BB879EF\default\deploy\quindata.com~demo~portal.sda" deployfile="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\sda\META-INF\sda-dd.xml">
+<component vendor="quindata.com"
+           name="demo/portal"
+           location="localDevelopment"
+           counter="20180706134514"
+           scvendor="quindata.com"
+           scname="RWZ-TEST"/>
+<fileset dir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\sda">
+<exclude name="**/*~"/>
+<exclude name="**/%*%"/>
+<exclude name="**/.#*"/>
+<exclude name="**/vssver.scc"/>
+<exclude name="**/.svn/**"/>
+<exclude name="**/.nfs*"/>
+<exclude name="**/CVS/**"/>
+<exclude name="**/._*"/>
+<exclude name="**/#*#"/>
+<exclude name="**/.cvsignore"/>
+<exclude name="**/SCCS/**"/>
+</fileset>
+<fileset dir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF">
+<include name="quindata.com~demo~portal.war"/>
+<exclude name="**/*~"/>
+<exclude name="**/%*%"/>
+<exclude name="**/.#*"/>
+<exclude name="**/vssver.scc"/>
+<exclude name="**/.svn/**"/>
+<exclude name="**/.nfs*"/>
+<exclude name="**/CVS/**"/>
+<exclude name="**/._*"/>
+<exclude name="**/#*#"/>
+<exclude name="**/.cvsignore"/>
+<exclude name="**/SCCS/**"/>
+</fileset>
+</jarsap>
+<timer message="JarSAP finished in "/>
+</target>
+</project>

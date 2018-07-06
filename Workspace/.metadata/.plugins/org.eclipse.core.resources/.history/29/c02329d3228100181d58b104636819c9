@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="LocalDevelopment~demo~war~quindata.com">
+        <property name="context-root" value="LocalDevelopment~demo~war~quindata.com"/>
+        <property name="java-output-path" value="/LocalDevelopment~demo~war~quindata.com/bin"/>
+    </wb-module>
+</project-modules>

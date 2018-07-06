@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<web-app>
+     <description></description>
+     <display-name>quindata.com~demo~portal</display-name>
+     <session-config>
+         <session-timeout>15</session-timeout>
+     </session-config>
+</web-app>

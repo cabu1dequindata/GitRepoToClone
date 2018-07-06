@@ -1,0 +1,16 @@
+>>> === execute (on Fri Jul 06 15:45:17 CEST 2018)===
+com.sap.tc.buildplugin.scdef.ScdefValidator: Execution starts on Fri Jul 06 15:45:17 CEST 2018
+
+
+
+File: sourceDir1: C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\rwz-test\_comp\src
+compilePPDirList is empty.
+>>> === generate===
+>>> === getSoftcompValueMap===
+InputFileMap: {.description=C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\rwz-test\_comp\src\.description}
+SoftcompValueMap: {Version=1.0, GUID=e4d20f11-8118-11e8-8f00-fb72c0a8132a, ElementTypeID=0, Vendor=quindata.com, Name=RWZ-TEST}
+<<< === getSoftcompValueMap===
+>>> === generateSoftwareComponent===
+<<< === generateSoftwareComponent===
+<<< === generate===
+com.sap.tc.buildplugin.scdef.ScdefValidator: Execution ends on Fri Jul 06 15:45:17 CEST 2018

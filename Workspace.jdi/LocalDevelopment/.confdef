@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration
 		caption="Local Development"
-		config-version="0"
+		config-version="2"
 		document-type-version="1.0"
 		is-local="yes"
 		name="LocalDevelopment"
@@ -551,6 +551,32 @@
 			</properties>
 			<build-variants>
 				<build-variant name="default"/>
+			</build-variants>
+		</sc-compartment>
+		<sc-compartment archive-state="no" caption="RWZ-TEST" default-compartment="yes" name="RWZ-TEST" sc-name="RWZ-TEST" sc-vendor="quindata.com">
+			<compartment-description>RWZ-TEST</compartment-description>
+			<source-state type="local"/>
+			<dependencies>
+				<used-compartment>ENGFACADE</used-compartment>
+				<used-compartment>EP-BASIS</used-compartment>
+				<used-compartment>EP-BASIS-API</used-compartment>
+				<used-compartment>EP_BUILDT</used-compartment>
+				<used-compartment>FRAMEWORK-EXT</used-compartment>
+				<used-compartment>RWZ-TEST</used-compartment>
+				<used-compartment>SAP_BUILDT</used-compartment>
+			</dependencies>
+			<build-variants>
+				<build-variant name="default">
+					<variant-mappings>
+						<variant-mapping used-compartment="ENGFACADE" used-variant-name="default"/>
+						<variant-mapping used-compartment="EP-BASIS" used-variant-name="default"/>
+						<variant-mapping used-compartment="EP-BASIS-API" used-variant-name="default"/>
+						<variant-mapping used-compartment="EP_BUILDT" used-variant-name="default"/>
+						<variant-mapping used-compartment="FRAMEWORK-EXT" used-variant-name="default"/>
+						<variant-mapping used-compartment="RWZ-TEST" used-variant-name="default"/>
+						<variant-mapping used-compartment="SAP_BUILDT" used-variant-name="default"/>
+					</variant-mappings>
+				</build-variant>
 			</build-variants>
 		</sc-compartment>
 		<sc-compartment archive-state="yes" caption="SAP_BUILDT" default-compartment="yes" local-archive-folder="SAP_BUILDT" name="SAP_BUILDT" sc-name="SAP_BUILDT" sc-vendor="sap.com">

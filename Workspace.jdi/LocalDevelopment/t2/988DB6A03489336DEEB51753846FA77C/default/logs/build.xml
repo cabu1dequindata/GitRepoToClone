@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    development component
+                     name: rwz-test
+                   vendor: quindata.com
+                     type: Software Component Description
+                 sub-type: 
+              type-vendor: sap.com
+
+       software component
+                     name: RWZ-TEST
+                   vendor: quindata.com
+
+                 location: localDevelopment
+          source location: cabu1de@ham00797
+            build variant: default
+
+    building on ham00797, Windows 10/amd64, version 10.0
+    using Java VM 'Java HotSpot(TM) 64-Bit Server VM', version 25.171-b11 (Oracle Corporation)
+    build started at 2018-07-06 15:45:16 GMT+02:00 (CEST)
+
+    Build Plugin 'sap.com/tc/bi/bp/scdef', Version 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:28:22 +0100, CL245679)
+    detailed versions:
+    sap.com:tc/bi/anttasks#def     7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:47 +0100, CL245679)
+    sap.com:tc/bi/core#def         7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:28:22 +0100, CL245679)
+    sap.com:tc/bi/exception#def    7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:46 +0100, CL245679)
+    sap.com:tc/bi/extddicdb#def    7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:53 +0100, CL245679)
+    sap.com:tc/bi/extsld#def       7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:53 +0100, CL245679)
+    sap.com:tc/bi/extsql#def       7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:48 +0100, CL245679)
+    sap.com:tc/bi/framework#def    7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:03 +0100, CL245679)
+    sap.com:tc/bi/i18n#def         7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:41 +0100, CL245679)
+    sap.com:tc/bi/javatech#def     7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:43 +0100, CL245679)
+    sap.com:tc/bi/jdoc#def         7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:46 +0100, CL245679)
+    sap.com:tc/bi/jdoc/util#def    7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:30 +0100, CL245679)
+    sap.com:tc/bi/jlincbs#def      7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:27:16 +0100, CL245679)
+    sap.com:tc/bi/settings#version 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:25:32 +0100, CL245679)
+    sap.com:tc/bi/util#util        7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:14 +0100, CL245679)
+    sap.com:tc/bi/velocity#def     7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:40 +0100, CL245679)
+    sap.com:tc/bi/xml#def          7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:43 +0100, CL245679)
+ -->
+<project name="DC Build"
+         default="build"
+         basedir=".">
+<taskdef name="ScdefGeneratorTask" classname="com.sap.tc.buildplugin.scdef.ScdefGeneratorTask"/>
+<taskdef name="cda" classname="com.sap.tc.buildplugin.deploy.DeployArchiveTask"/>
+<taskdef name="pppacker" classname="com.sap.tc.buildplugin.pp.PPPackTask"/>
+<taskdef name="propertybag" classname="com.sap.tools.ant.taskdefs.PropertyBag"/>
+<taskdef name="timer" classname="com.sap.tools.ant.taskdefs.Timer"/>
+
+<target name="translate">
+<!-- begin generator chain id 'sap.com~sl.scdef_chain', type 'sap.com~sl.scdef_chain' -->
+<!-- begin generator id 'sap.com~sl.scdef_chain/scdef', type 'sap.com~sl.scdef.task.generator' -->
+<echo message="+++ com.sap.tc.buildplugin.scdef.ScdefTaskGenerator: taskName: ScdefGeneratorTask"/>
+<echo message="localContext: com.sap.tc.buildplugin.util.DataContext@5a74e9ee"/>
+<echo message="inputPaths: {compile_pp=[], source=[C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\rwz-test\_comp\src]}"/>
+<echo message="outputPaths: {default=C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\testoutput, packdir=C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sld_pack01, tempdir=C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sld_temp01}"/>
+<echo message="usedPaths: {}"/>
+<echo message="parameters: {outputFolderName=testoutput}"/>
+<echo message="File(source): C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\rwz-test\_comp\src"/>
+<ScdefGeneratorTask packdir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sld_pack01" tempdir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sld_temp01">
+<sdir sdir="C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\rwz-test\_comp\src"/>
+</ScdefGeneratorTask>
+<!-- end generator id 'sap.com~sl.scdef_chain/scdef', type 'sap.com~sl.scdef.task.generator' -->
+<!-- end generator chain id 'sap.com~sl.scdef_chain', type 'sap.com~sl.scdef_chain' -->
+</target>
+
+<target name="createPublicParts" depends="translate">
+<timer/>
+<pppacker ppname="default">
+</pppacker>
+<timer message="Packing of public part 'default' finished in "/>
+</target>
+
+<target name="createDeployArchive" depends="createPublicParts">
+<cda type="sap.com~SDA" deployfile="C:\git\ws\Workspace.jdi\LocalDevelopment\t2\988DB6A03489336DEEB51753846FA77C\default\deploy/quindata.com~rwz-test.sda">
+<descriptor type="sda-deployment-descriptor" file="C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sld_temp01\sda-dd.xml"/>
+<option key="software-type" value="CONTENT"/>
+<option key="software-subtype" value="SL-SDA"/>
+<fileset dir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sld_pack01"/>
+</cda>
+</target>
+
+<target name="build" depends="translate,createPublicParts,createDeployArchive">
+
+</target>
+</project>

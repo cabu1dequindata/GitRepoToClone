@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    development component
+                     name: demo/portal
+                   vendor: quindata.com
+                     type: Enterprise Portal
+                 sub-type: Portal Application Standalone
+              type-vendor: sap.com
+
+       software component
+                     name: RWZ-TEST
+                   vendor: quindata.com
+
+                 location: localDevelopment
+          source location: cabu1de@ham00797
+            build variant: default
+
+    building on ham00797, Windows 10/amd64, version 10.0
+    using Java VM 'Java HotSpot(TM) 64-Bit Server VM', version 25.171-b11 (Oracle Corporation)
+    build started at 2018-07-06 15:45:12 GMT+02:00 (CEST)
+
+    Build Plugin 'PortalAppPlugin', Version 7.10 SP 7 (NW750EXT_07_REL, built on 2017-02-25 02:19:02 +0100, CL245651)
+    detailed versions:
+    sap.com:tc/bi/anttasks#def             7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:47 +0100, CL245679)
+    sap.com:tc/bi/bp/portalapplication#def 7.10 SP 7 (NW750EXT_07_REL, built on 2017-02-25 02:19:02 +0100, CL245651)
+    sap.com:tc/bi/core#def                 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:28:22 +0100, CL245679)
+    sap.com:tc/bi/eptech#def               7.10 SP 7 (NW750EXT_07_REL, built on 2017-02-25 02:19:08 +0100, CL245651)
+    sap.com:tc/bi/exception#def            7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:46 +0100, CL245679)
+    sap.com:tc/bi/extddicdb#def            7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:53 +0100, CL245679)
+    sap.com:tc/bi/extpcd#def               7.10 SP 7 (NW750EXT_07_REL, built on 2017-02-25 02:19:01 +0100, CL245651)
+    sap.com:tc/bi/extsql#def               7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:48 +0100, CL245679)
+    sap.com:tc/bi/framework#def            7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:03 +0100, CL245679)
+    sap.com:tc/bi/i18n#def                 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:41 +0100, CL245679)
+    sap.com:tc/bi/javatech#def             7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:43 +0100, CL245679)
+    sap.com:tc/bi/jdoc#def                 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:46 +0100, CL245679)
+    sap.com:tc/bi/jdoc/util#def            7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:30 +0100, CL245679)
+    sap.com:tc/bi/jlincbs#def              7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:27:16 +0100, CL245679)
+    sap.com:tc/bi/settings#version         7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:25:32 +0100, CL245679)
+    sap.com:tc/bi/util#util                7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:14 +0100, CL245679)
+    sap.com:tc/bi/velocity#def             7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:40 +0100, CL245679)
+    sap.com:tc/bi/xml#def                  7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:43 +0100, CL245679)
+ -->
+<project name="DC Build"
+         default="build"
+         basedir=".">
+<taskdef name="cda" classname="com.sap.tc.buildplugin.deploy.DeployArchiveTask"/>
+<taskdef name="checkfileset" classname="com.sap.tools.ant.taskdefs.EmptyFilesetCheck"/>
+<taskdef name="createappj2ee" classname="com.sap.tools.ant.taskdefs.ApplicationJ2EEEngineTask"/>
+<taskdef name="pppacker" classname="com.sap.tc.buildplugin.pp.PPPackTask"/>
+<taskdef name="propertybag" classname="com.sap.tools.ant.taskdefs.PropertyBag"/>
+<taskdef name="sdadd" classname="com.sap.tools.ant.taskdefs.SdaDDTask"/>
+<taskdef name="timer" classname="com.sap.tools.ant.taskdefs.Timer"/>
+<taskdef name="xlf2prop" classname="com.sap.tc.buildplugin.util.XlfConverter"/>
+<!-- DC properties: -->
+            <!-- Name: localization , ns: http://xml.sap.com/2003/06/Localization , value:  -->
+            <!-- Name: package-sources , ns: http://xml.sap.com/2004/06/PortalPlatform , value: false -->
+            <!-- Name: par-archive-name , ns: http://xml.sap.com/2004/06/PortalPlatform , value: quindata.com~demo~portal -->
+                <!-- portal properties: {package-sources=false, par-archive-name=quindata.com~demo~portal} -->
+
+<target name="compile">
+<mkdir dir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\classes"/>
+<!-- begin generator extension type 'sap.com~sqlj' for generator id 'sap.com~javac' -->
+<!-- No *.sqlj files found, skipping SQLJ preprocessing. -->
+<!-- end generator extension type 'sap.com~sqlj' for generator id 'sap.com~javac' -->
+<!-- begin generator id 'sap.com~javac', type 'sap.com~javac' -->
+<echo message="Starting Java compiler using the current JVM"/>
+<timer/>
+<echo message="Settings:"/>
+<echo message="        debug: on"/>
+<echo message="     optimize: off"/>
+<echo message="  deprecation: default"/>
+<echo message="      verbose: default"/>
+<echo message="     encoding: UTF-8"/>
+<echo message="       source: default"/>
+<echo message="       target: default"/>
+<echo message="  source path: C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\demo\portal\_comp\src.core"/>
+<echo message="   class path:"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\ENGFACADE\sap.com\tc\je\webservices\lib\_comp\gen\default\public\api\lib\java\tc~je~webservices~lib.jar"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\epbc.prtpars._htmlb\_comp\gen\default\public\default\lib\java\com.sap.portal.htmlb.jar"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\epbc.prtpars._htmlb\_comp\gen\default\public\default\lib\java\tc~htmlb~htmlb_api.jar"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS-API\sap.com\tc\epbc\prt\api\_comp\gen\default\public\api\lib\java\tc~epbc~prt~api.jar"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\FRAMEWORK-EXT\sap.com\com.sapportals.htmlb\_comp\gen\default\public\default\lib\java\com.sapportals.htmlb.jar"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\tc\epbc\prt\apps\_comp\gen\default\public\api\lib\java\com.sap.portal.prt.connection.public.jar"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\tc\epbc\prt\apps\_comp\gen\default\public\api\lib\java\com.sap.portal.runtime.application.contentconversion.jar"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\tc\epbc\prt\apps\_comp\gen\default\public\api\lib\java\com.sap.portal.runtime.application.document.jar"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\tc\epbc\prt\apps\_comp\gen\default\public\api\lib\java\com.sap.portal.runtime.system.clusterinformation.jar"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\tc\epbc\prt\apps\_comp\gen\default\public\api\lib\java\com.sap.portal.runtime.system.hooks.jar"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\tc\epbc\prt\apps\_comp\gen\default\public\api\lib\java\tc~epbc~prt~apps.jar"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\ENGFACADE\sap.com\engine.j2ee14.facade\_comp\gen\default\public\api\lib\java\engine.j2ee14.facade.jar"/>
+<echo message="   output dir: C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\classes"/>
+<checkfileset fail="false">
+<fileset dir="C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\demo\portal\_comp\src.core">
+<include name="**/*.class"/>
+</fileset>
+</checkfileset>
+<javac includeAntRuntime="no"
+       destdir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\classes"
+       encoding="UTF-8"
+       deprecation="false"
+       debug="on"
+       tempdir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF">
+<src path="C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\demo\portal\_comp\src.core"/>
+<include name="**/*.java"/>
+<classpath>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\ENGFACADE\sap.com\tc\je\webservices\lib\_comp\gen\default\public\api\lib\java\tc~je~webservices~lib.jar"/>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\epbc.prtpars._htmlb\_comp\gen\default\public\default\lib\java\com.sap.portal.htmlb.jar"/>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\epbc.prtpars._htmlb\_comp\gen\default\public\default\lib\java\tc~htmlb~htmlb_api.jar"/>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS-API\sap.com\tc\epbc\prt\api\_comp\gen\default\public\api\lib\java\tc~epbc~prt~api.jar"/>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\FRAMEWORK-EXT\sap.com\com.sapportals.htmlb\_comp\gen\default\public\default\lib\java\com.sapportals.htmlb.jar"/>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\tc\epbc\prt\apps\_comp\gen\default\public\api\lib\java\com.sap.portal.prt.connection.public.jar"/>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\tc\epbc\prt\apps\_comp\gen\default\public\api\lib\java\com.sap.portal.runtime.application.contentconversion.jar"/>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\tc\epbc\prt\apps\_comp\gen\default\public\api\lib\java\com.sap.portal.runtime.application.document.jar"/>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\tc\epbc\prt\apps\_comp\gen\default\public\api\lib\java\com.sap.portal.runtime.system.clusterinformation.jar"/>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\tc\epbc\prt\apps\_comp\gen\default\public\api\lib\java\com.sap.portal.runtime.system.hooks.jar"/>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\EP-BASIS\sap.com\tc\epbc\prt\apps\_comp\gen\default\public\api\lib\java\tc~epbc~prt~apps.jar"/>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\ENGFACADE\sap.com\engine.j2ee14.facade\_comp\gen\default\public\api\lib\java\engine.j2ee14.facade.jar"/>
+</classpath>
+</javac>
+<timer message="Java compilation finished in "/>
+<!-- end generator id 'sap.com~javac', type 'sap.com~javac' -->
+<!-- begin generator extension type 'sap.com~jlin' for generator id 'sap.com~javac' -->
+<!-- JLin disabled. -->
+<!-- end generator extension type 'sap.com~jlin' for generator id 'sap.com~javac' -->
+<!-- begin generator extension type 'sap.com~sqlj' for generator id 'sap.com~javac' -->
+<!-- No *.sqlj files found, skipping SQLJ post-processing. -->
+<!-- end generator extension type 'sap.com~sqlj' for generator id 'sap.com~javac' -->
+<!-- begin generator extension type 'sap.com~jdo' for generator id 'sap.com~javac' -->
+<!-- No *.jdo files found, skipping JDO enhancer. -->
+<!-- end generator extension type 'sap.com~jdo' for generator id 'sap.com~javac' -->
+<!-- begin generator extension type 'sap.com~xlf2prop' for generator id 'sap.com~javac' -->
+<echo message="Start XLF conversion"/>
+<timer/>
+<xlf2prop todir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\classes">
+<fileset dir="C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\demo\portal\_comp\src.core"/>
+</xlf2prop>
+<timer message="XLF conversion finished in "/>
+<!-- end generator extension type 'sap.com~xlf2prop' for generator id 'sap.com~javac' -->
+<!-- begin generator extension type 'sap.com~jdoc' for generator id 'sap.com~javac' -->
+<!-- Javadoc generation disabled. -->
+<!-- end generator extension type 'sap.com~jdoc' for generator id 'sap.com~javac' -->
+
+            
+                	<mkdir dir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\PAR"/>
+                <timer/>
+<pppacker ppname="Portal Application libraries"
+          internal="true"
+          purpose="intermediate"
+          root="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\PAR">
+            <packer location="lib.api" type="jar">
+            <property key="path" value="WEB-INF/lib/api.jar"/>
+            <property key="manifest" value="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\MANIFEST.MF"/>
+            </packer>
+            <packer location="lib.core" type="jar">
+            <property key="path" value="WEB-INF/private/lib/core.jar"/>
+            <property key="manifest" value="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\MANIFEST.MF"/>
+            </packer>
+    	        	    
+            <entityhandler classname="com.sap.tc.buildplugin.pp.entity.EHAbsoluteJavaPackageTree">
+                <entitytype type="portalapplication-api" subtype="Class"/>
+        		                <property key="class-destination"  value="lib.api"/>
+            </entityhandler>
+
+            <entityhandler classname="com.sap.tc.buildplugin.pp.entity.EHAbsoluteJavaPackageTree">
+                <entitytype type="portalapplication-core" subtype="Class"/>
+        		                <property key="class-destination"  value="lib.core"/>
+            </entityhandler>
+
+            <entity type="portalapplication-api"  subtype="Class" package="src.api"/>
+            <entity type="portalapplication-core" subtype="Class" package="src.core"/>
+            </pppacker>
+<timer message="Portal Application libraries packaging finished in "/>
+</target>
+
+<target name="createApplication" depends="compile">
+<echo message="create PAR.."/>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      	<mkdir dir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\PAR/WEB-INF"/>
+            <echo file="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\PAR/WEB-INF/web.xml" append="false"><![CDATA[<?xml version="1.0" ?>
+<web-app>
+     <description></description>
+     <display-name>quindata.com~demo~portal</display-name>
+     <session-config>
+         <session-timeout>15</session-timeout>
+     </session-config>
+</web-app>
+]]></echo>
+                    		    		        <copy todir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\PAR/WEB-INF/">
+                    <fileset dir="C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\demo\portal\_comp//dist/PORTAL-INF"/>
+		        </copy>
+					                  	<jar jarfile="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF/quindata.com~demo~portal.war" manifest="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\MANIFEST.MF" duplicate="preserve">
+		                <fileset dir="C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\demo\portal\_comp//dist">
+                <include name="**" />
+                                    <exclude name="PORTAL-INF/**/*"/>
+                    <exclude name="PORTAL-INF"/>
+                            </fileset>
+					                <fileset dir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF\PAR">
+                <include name="WEB-INF/**" />
+            </fileset>
+            </jar>
+</target>
+
+<target name="createPublicParts" depends="createApplication">
+<timer/>
+<pppacker ppname="API">
+
+                <packer location="par" type="filesystem">
+                    <property key="attributes" value="J2EE-Module[module-type[web]],content-root[quindata.com~demo~portal]"/>
+                </packer>
+                <entityhandler classname="com.sap.tc.buildplugin.pp.entity.EHDeployArchive">
+                    <entitytype type="PAR"/>
+                    <property key="packer-location" value="par"/>
+                    <property key="path" value="portal/quindata.com~demo~portal.war"/>
+                    <property key="file" value="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF/quindata.com~demo~portal.war"/>
+                </entityhandler>
+                                </pppacker>
+<timer message="Public part packaging finished in "/>
+</target>
+
+<target name="createDeployArchive" depends="createPublicParts">
+<echo message="Creating portalapp-dd.xml"/>
+                                <sdadd file="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF/sda-dd.xml"
+       softwaretype="J2EE"
+       descriptortype="engine">
+<SubstitutionVariable name="com.sap.sld.GatewayHost"/>
+<SubstitutionVariable name="com.sap.sld.GatewayService"/>
+</sdadd>
+
+            
+            
+            
+            <createappj2ee file="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF/application-j2ee-engine.xml" providername="quindata.com" startupmode="always"/>
+                                                    <cda type="sap.com~j2ee.EAR_SDA" deployfile="C:\git\ws\Workspace.jdi\LocalDevelopment\t2\B6BE614EB1E1F210D28D1A360BB879EF\default\deploy/quindata.com~demo~portal.sda">
+<descriptor type="sda-deployment-descriptor" file="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF/sda-dd.xml"/>
+
+                <option key="update-descriptors" value="true"/>
+                <descriptor file="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF/application-j2ee-engine.xml" type="application-j2ee-engine.xml" destpath="META-INF/application-j2ee-engine.xml"/>
+                <module file="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B6BE614EB1E1F210D28D1A360BB879EF/quindata.com~demo~portal.war" attributes="J2EE-Module[module-type[web]],content-root[quindata.com~demo~portal]"/>
+                                                                    </cda>
+</target>
+
+<target name="build" depends="compile,createApplication,createPublicParts,createDeployArchive">
+
+</target>
+</project>

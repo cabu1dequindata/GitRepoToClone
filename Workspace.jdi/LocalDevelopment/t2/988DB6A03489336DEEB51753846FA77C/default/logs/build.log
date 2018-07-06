@@ -1,0 +1,122 @@
+Development Component Build (2018-07-06 15:45:16 GMT+01:00 (CEST))
+  Component name: rwz-test
+  Component vendor: quindata.com
+  SC compartment: RWZ-TEST
+  Configuration: LocalDevelopment
+  Location: localDevelopment
+  Source code location: cabu1de@ham00797
+  DC root folder: C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\rwz-test\_comp\
+  DC type: Software Component Description
+  Host: ham00797
+
+DC Model check:
+   DC is available locally
+   validating dependency to build plugin "sap.com/tc/bi/bp/scdef"
+   DC model check OK
+
+Start build plugin:
+   using build plugin: sap.com/tc/bi/bp/scdef
+   starting build plugin from : C:\git\ws\Workspace.jdi\LocalDevelopment\SAP_BUILDT\sap.com\tc\bi\bp\scdef\_comp\gen\default\public\def\
+
+
+
+Build Plugin 'sap.com/tc/bi/bp/scdef', Version 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:28:22 +0100, CL245679)
+   development component:  rwz-test (quindata.com)
+      software component:  RWZ-TEST (quindata.com)
+       support component:  NONE
+                location:  localDevelopment
+                    type:  Software Component Description
+           build variant:  default
+         source location:  cabu1de@ham00797
+         output location:  C:\git\ws\Workspace.jdi\LocalDevelopment\t2\988DB6A03489336DEEB51753846FA77C\default
+       generation folder:  C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C
+       plugin start time:  2018-07-06 15:45:16 GMT+02:00 (CEST)
+                 Java VM:  Java HotSpot(TM) 64-Bit Server VM, 25.171-b11 (1.8, Oracle Corporation)
+
+
+General options:
+  convert *.xlf to *.properties: yes
+  include sources for debugging: yes
+ 
+
+
+Checking path lengths for sources
+Path length checks finished in 0 seconds
+ 
+Preparing data context..
+Data context preparation finished in 0.016 seconds
+ 
+Creating Ant build file..
+  Creating output file: C:\git\ws\Workspace.jdi\LocalDevelopment\t2\988DB6A03489336DEEB51753846FA77C\default\logs\build.xml
+  Using Java class:     com.sap.tc.buildplugin.scdef.ScdefBuildFileCreator
+  +++ com.sap.tc.buildplugin.scdef.ScdefBuildFileCreator: chainName: sap.com~sl.scdef_chain
+  +++ forcing SDA creation, DC does not contain complete product model
+Build file creation finished in 0.047 seconds
+ 
+Starting Ant..
+  Using build file:     C:\git\ws\Workspace.jdi\LocalDevelopment\t2\988DB6A03489336DEEB51753846FA77C\default\logs\build.xml
+  Using build target:   build
+  Using Ant version:    1.7.1
+ 
+translate:
+      [echo] +++ com.sap.tc.buildplugin.scdef.ScdefTaskGenerator: taskName: ScdefGeneratorTask
+      [echo] localContext: com.sap.tc.buildplugin.util.DataContext@5a74e9ee
+      [echo] inputPaths: {compile_pp=[], source=[C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\rwz-test\_comp\src]}
+      [echo] outputPaths: {default=C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\testoutput, packdir=C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sld_pack01, tempdir=C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sld_temp01}
+      [echo] usedPaths: {}
+      [echo] parameters: {outputFolderName=testoutput}
+      [echo] File(source): C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\rwz-test\_comp\src
+[ScdefGeneratorTask] WARNING: [System.err] [Invoked from org.eclipse.osgi.util.NLS.log(NLS.java:377)]
+[ScdefGeneratorTask] WARNING: [System.err] Warning: NLS missing message: plugin_unableToGetActivator in: org.eclipse.core.internal.runtime.messages
+[ScdefGeneratorTask] Executing inside of com.sap.tc.buildplugin.scdef.ScdefValidator...
+[ScdefGeneratorTask] packDir: C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sld_pack01
+[ScdefGeneratorTask] tempDir: C:\git\ws\Workspace.jdi\LocalDevelopment\t\988DB6A03489336DEEB51753846FA77C\sld_temp01
+ 
+createPublicParts:
+  [pppacker] Packing public part 'default'
+  [pppacker] Packed   1 file  for entity / (Folder)
+  [pppacker] Packed 1 entity for public part 'default'
+     [timer] Packing of public part 'default' finished in 0.032 seconds
+ 
+ 
+createDeployArchive:
+       [cda] Preparing archive for deploy unit "default"
+       [cda]   deployment type: "CONTENT" / "SL-SDA"
+       [cda]   deploy options:
+       [cda]     software-type = CONTENT
+       [cda]     software-subtype = SL-SDA
+ 
+       [cda] Creating Ant build file: C:\git\ws\Workspace.jdi\LocalDevelopment\t2\988DB6A03489336DEEB51753846FA77C\default\logs\buildDeployArchive.xml
+ 
+ 
+       [cda] Collecting modules ...
+       [cda] Ant build file creation finished in 0.032 seconds
+ 
+packDeployArchive:
+ [srcpacker] Creating source archive
+ [srcpacker] No sources available for packing, no archive will be created.
+     [timer] Source archive creation finished in 0.031 seconds
+ 
+    [jarsap] Info: JarSAP version 20090803.1000
+    [jarsap] Info: JarSAPProcessing version 20090907.1000 / JarSL version 20100616.1800
+    [jarsap] Building: C:\git\ws\Workspace.jdi\LocalDevelopment\t2\988DB6A03489336DEEB51753846FA77C\default\deploy\quindata.com~rwz-test.sda with compression
+     [timer] JarSAP finished in 0.032 seconds
+ 
+ 
+build:
+ 
+Ant runtime 0.833 seconds
+ 
+Ant build finished OK
+ 
+Build plugin finished at 2018-07-06 15:45:17 GMT+02:00 (CEST)
+Total build plugin runtime: 1.208 seconds
+ 
+Build finished with WARNING
+
+==== Post-Processing ====   started at 2018-07-06 15:45:17.964 CEST
+Comparison of previous and actual build results took: 0.016 seconds
+
+Copy the build results 
+  from: C:\git\ws\Workspace.jdi\LocalDevelopment\t2\988DB6A03489336DEEB51753846FA77C\default\
+  to:   C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\rwz-test\_comp\gen\default\

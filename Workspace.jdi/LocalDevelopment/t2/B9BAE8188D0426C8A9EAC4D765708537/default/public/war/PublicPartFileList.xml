@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<content version="4">
+<metadata>
+<development-component>
+<name>demo/war</name>
+<vendor>quindata.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE</type>
+<sub-type>WebModule</sub-type>
+</component-type>
+</development-component>
+<public-part>
+<name>war</name>
+<purpose>assembly</purpose>
+</public-part>
+<dependencies>
+<dependency>
+<dc-ref>
+<name>engine.jee5.facade</name>
+<vendor>sap.com</vendor>
+<component-type>
+<vendor>sap.com</vendor>
+<type>J2EE Server Component</type>
+<sub-type>Primary Library</sub-type>
+</component-type>
+</dc-ref>
+<pp-ref purpose="compilation">api</pp-ref>
+<at-build-time/>
+</dependency>
+</dependencies>
+</metadata>
+<source-components/>
+<archives>
+<archive location="srcarchive" path="src/java/src.zip" type="zip"/>
+<archive location="war" path="lib/java/quindata.com~demo~war.war" type="war">
+<property key="attributes">J2EE-Module[module-type[web]],jar,war</property>
+</archive>
+</archives>
+<entities>
+<entity>
+<name>quindata.com~demo~war</name>
+<entity-type>WAR</entity-type>
+<entity-type-vendor>sap.com</entity-type-vendor>
+<fileset location="srcarchive" source-location="DC" source-path="source">
+<file path="de/quindata/demo/MyTestServlet.java"/>
+</fileset>
+<fileset location="war" source-location="DC" source-path="WebContent">
+<file path="META-INF/MANIFEST.MF"/>
+<file path="WEB-INF/web-j2ee-engine.xml"/>
+</fileset>
+<fileset location="war" source-location="gen" source-path="classes">
+<file path="WEB-INF/classes/de/quindata/demo/MyTestServlet.class" source-path="de/quindata/demo/MyTestServlet.class"/>
+</fileset>
+</entity>
+</entities>
+</content>

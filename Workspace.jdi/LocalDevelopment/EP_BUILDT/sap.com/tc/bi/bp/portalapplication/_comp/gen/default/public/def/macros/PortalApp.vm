@@ -1,0 +1,342 @@
+#macro(BuildPortalApplication)
+
+	## the sub directory in a public part containing portal files (e.g PARs)
+	#set($PP_SUBDIR_PORTAL = "portal")
+
+    #set($par_useWebContainer = true)
+    #set($option = false)
+    #set($option = $dc_util.getOption("par_useWebContainer"))
+    #if ($option)
+        #set ($par_useWebContainer = $dc_util.booleanValue($option))
+    #end
+    $dc_util.setGlobalContextValue("par_useWebContainer", $par_useWebContainer)
+
+    ## This switch is for legacy support. The current IDE integration does
+    ## not create a property in the .dcdef file.
+    #set( $deploytype = "online" )
+
+    #set( $do_build_sda = false)
+    #if ($dc_subtype == "Portal Application Standalone")
+        #set( $do_build_sda = true)
+    #end
+
+    ## The Eclipse plugin creates a property in .dcdef that is used
+    ## to support (legacy,custom) par file names. If the property is set
+    ## the value of the property should be used instead of this.
+    #set( $parFileName = "${dc_deployFile}" )
+
+    #set( $sdaFileName = "${dc_deployFile}" )
+
+    ## legacy support: support inclusion of PAR sources with the PAR file
+    ## itself
+    #set( $packAPISources  = false )
+    #set( $packCoreSources = false )
+
+    ## dump properties in build file for support
+    <!-- DC properties: -->
+    #foreach( $prop in $dc_properties)
+        <!-- Name: $prop.getName() , ns: $prop.getNamespace() , value: $!prop.getValue() -->
+    #end
+    #set( $portalProperties = $dc_util.getFlatPropertiesAsMap($dc_properties, "http://xml.sap.com/2004/06/PortalPlatform"))
+    #if ( $portalProperties )
+        <!-- portal properties: $portalProperties -->
+        #if ($portalProperties.get("par-archive-name"))
+            #set( $parFileName = $portalProperties.get("par-archive-name") )
+        #end
+        ###if ($portalProperties.get("sda-archive-name"))
+        ##    #set( $sdaFileName = $portalProperties.get("sda-archive-name") )
+        ##    <echo message="SDA file name: ${sdaFileName}"/>
+        ###end
+        ###if ($portalProperties.get("sda-type") == "FS")
+        ##    #set( $deploytype = "offline" )
+        ###end
+        #if ($dc_util.booleanValue($portalProperties.get("package-sources")))
+            #set( $packAPISources  = true )
+            #set( $packCoreSources = true )
+        #end
+
+    #end
+
+    #if($par_useWebContainer)
+        #set($INF_FOLDER = "WEB-INF")
+        #set($suffix = "war")
+        #set($deploy_attributes = "J2EE-Module[module-type[web]],content-root[${parFileName}]")
+    #else
+        #set($INF_FOLDER = "PORTAL-INF")
+        #set($suffix = "par")
+        #set($deploy_attributes = "SAP-J2EE-Module[container-type[PortalRuntimeContainer]]")
+    #end
+
+
+    $dc_util.logInfo("DC specific options:")
+    $dc_util.logInfo("  Portal Application file name:   ${parFileName}.${suffix}")
+    #set($booleanValue = "no")
+    #if ($packAPISources)
+        #set($booleanValue = "yes")
+    #end
+    $dc_util.logInfo("  Include sources in application: ${booleanValue}")
+    $dc_util.logInfo("  Deploy type:                    ${deploytype}")
+    $dc_util.logInfo("  Use WebContainer:               ${par_useWebContainer}")
+    $dc_util.logInfo("")
+
+
+    #StartTarget("compile")
+
+        $dc_util.addFolderDependency("package", "src.core", "src.api")
+        #CompileDCJavaSources()
+        #FinishGeneration()
+
+        #set( $local_par_genDir = $dc_util.createTempDir("PAR"))
+        #MkDir($local_par_genDir)
+        ## package compile results
+        #BeginPackInternalPPWithPurpose("Portal Application libraries" "intermediate" $local_par_genDir)
+            <packer location="lib.api" type="jar">
+            <property key="path" value="${INF_FOLDER}/lib/api.jar"/>
+            <property key="manifest" value="${bi_manifest_Name}"/>
+            </packer>
+            <packer location="lib.core" type="jar">
+            <property key="path" value="${INF_FOLDER}/private/lib/core.jar"/>
+            <property key="manifest" value="${bi_manifest_Name}"/>
+            </packer>
+    	    #if ($packAPISources)
+            <packer location="src.api" type="zip">
+            <property key="path" value="${INF_FOLDER}/srclib.api/${parFileName}srcApi.jar"/>
+            </packer>
+    	    #end
+    	    #if ($packCoreSources)
+            <packer location="src.core" type="zip">
+            <property key="path" value="${INF_FOLDER}/srclib.core/${parFileName}srcCore.jar"/>
+            </packer>
+    	    #end
+
+            <entityhandler classname="com.sap.tc.buildplugin.pp.entity.EHAbsoluteJavaPackageTree">
+                <entitytype type="portalapplication-api" subtype="Class"/>
+        		#if ($packAPISources)
+                <property key="source-destination" value="src.api"/>
+        		#end
+                <property key="class-destination"  value="lib.api"/>
+            </entityhandler>
+
+            <entityhandler classname="com.sap.tc.buildplugin.pp.entity.EHAbsoluteJavaPackageTree">
+                <entitytype type="portalapplication-core" subtype="Class"/>
+        		#if ($packCoreSources)
+                <property key="source-destination" value="src.core"/>
+        		#end
+                <property key="class-destination"  value="lib.core"/>
+            </entityhandler>
+
+            <entity type="portalapplication-api"  subtype="Class" package="src.api"/>
+            <entity type="portalapplication-core" subtype="Class" package="src.core"/>
+        #EndPackInternalPP("Portal Application libraries")
+    #EndTarget()
+
+    #StartTargetDep("createApplication" "compile")
+        ##
+        ## Step 3.1: Check for Collaboration Room Templates
+        ## - check if DC contains a "src.config" Source folder
+        #if ($dc_util.isDefinedSourceFolder("src.config") )
+            #if($par_useWebContainer)
+                #MkDir("${dc_gen_tempDir}/tmp.config")
+                #set($config_dest = "${dc_gen_tempDir}/tmp.config")
+            #else
+                #set($config_dest = "${local_par_genDir}/PORTAL-INF/config")
+            #end
+            #CreateConfigArchive("${parFileName}" "${dc_rootDir}/src.config" $config_dest)
+        #end
+
+        ##
+        ## Step 3.2: Check for Universal Work Lists
+        ##
+        #set($uwl_srcdir = "src.uwl")
+        #if ($dc_util.isDefinedSourceFolder($uwl_srcdir) )
+            #MkDir("${local_par_genDir}/${INF_FOLDER}/private/classes")
+            #CreateUWLArchive($uwl_srcdir "${local_par_genDir}/${INF_FOLDER}/private/classes")
+        #end
+
+        ##
+        ## Step 3.3: Check for web services and create appropriate Jar in
+        ##           public lib folder.
+        ##
+        #if ($dc_util.isDefinedSourceOrPackageFolder("src.ws") && $dc_util.isDefinedSourceOrPackageFolder("META-INF"))
+            <echo message="Creating web service archive"/>
+            #MkDir("${local_par_genDir}/PORTAL-INF/lib")
+            #BeginJar("${local_par_genDir}/PORTAL-INF/lib/ws.jar")
+                <fileset dir="${dc_rootDir}/src.ws">
+                </fileset>
+            #EndJar()
+        #end
+
+        ##
+        ## Step 4: Package PAR file
+        ##
+        <echo message="create PAR.."/>
+
+        ## copy used assembly PPs to gendir
+        #foreach ( $dep in $dc_depend_allDependencies )
+            #if ( $dep.getAtBuild() )
+                #foreach ( $ppDep in $dep.getPublicPartNames() )
+                    #if ($dep.hasPublicPartPurpose($ppDep,"assembly"))
+                        ## @todo:   we should differentiate here what we do depending
+                        ##          on the type of the DC/
+
+                        ## copy jar-Files from used assembly PPs to public or private
+                        ## lib folder
+                        <copy
+                        #if ($dep.getBuildtimeQualifier() == "API")
+                          todir="${local_par_genDir}/${INF_FOLDER}/lib"
+                        #else
+                          todir="${local_par_genDir}/${INF_FOLDER}/private/lib"
+                        #end
+                             flatten="true">
+
+                            <fileset dir="$dep.getPublicPartRootPath($ppDep)">
+                                <include name="lib/java/*.jar"/>
+                            </fileset>
+                        </copy>
+                        ##
+                        ## @TODO assembly of
+                        ##   * config archives
+                        ##   * web content from other DCs (e.g. generated style sheets)
+                        ##   * etc files (generated language dependent XML files)
+                        ##
+                    #end
+                #end
+            #end
+        #end
+        ## now pack the actual PAR
+        ## for WAR format copy content of existing PORTAL-INF folder to temp folder
+        #if ($par_useWebContainer)
+          #if($dc_util.isFile("${dc_rootDir}/dist/WEB-INF/web.xml"))
+          ## nothing to do
+          #else
+            #set ($timeout = "15")
+            #set ($timeout = $dc_util.getOption("com.sap.par.session-timeout"))
+            #MkDir("${local_par_genDir}/WEB-INF")
+            <echo file="${local_par_genDir}/WEB-INF/web.xml" append="false"><![CDATA[<?xml version="1.0" ?>
+<web-app>
+     <description>$!dc_caption</description>
+     <display-name>${parFileName}</display-name>
+     <session-config>
+         <session-timeout>$timeout</session-timeout>
+     </session-config>
+</web-app>
+]]></echo>
+          #end
+          #if($dc_util.isDirectory("${dc_rootDir}/dist/PORTAL-INF"))
+		    #if ($dc_util.isDefinedSourceOrPackageFolder("dist") )
+		        <copy todir="${local_par_genDir}/${INF_FOLDER}/">
+                    <fileset dir="${dc_rootDir}/dist/PORTAL-INF"/>
+		        </copy>
+			#end
+		  #end
+        #end
+        #BeginJar("${dc_gen_tempDir}/${parFileName}.${suffix}")
+		    #if ($dc_util.isDefinedSourceOrPackageFolder("dist") )
+            <fileset dir="${dc_rootDir}/dist">
+                <include name="**" />
+                #if ($par_useWebContainer)
+                    <exclude name="PORTAL-INF/**/*"/>
+                    <exclude name="PORTAL-INF"/>
+                #end
+            </fileset>
+			#end
+		    #if ($dc_util.isDefinedSourceOrPackageFolder("META-INF") )
+			<fileset dir="${dc_rootDir}">
+				<include name="META-INF/**" />
+			</fileset>
+			#end
+            <fileset dir="${local_par_genDir}">
+                <include name="${INF_FOLDER}/**" />
+            </fileset>
+        #EndJar()
+    #EndTarget()
+
+    #StartTargetDep("createPublicParts" "createApplication")
+        ##
+        ## Step 5: Create public parts
+        ##
+        #foreach($pp in $dc_public_parts)
+            #if($par_useWebContainer && $dc_util.isDefinedSourceFolder("src.config") )
+                #set($has_PAR = false)
+                #set($temp_entityList = $pp.getEntities())
+                #foreach ($entity in $temp_entityList)
+                    #if ($entity.getType() == "PAR")
+                        #set($has_PAR = true)
+                    #end
+                #end
+                #if ($has_PAR)
+                        #set ($dummy = $pp.addEntity("configarchive", "", "configarchive", ""))
+                #end
+            #end
+            #BeginPackPP($pp)
+                <packer location="par" type="filesystem">
+                    <property key="attributes" value="${deploy_attributes}"/>
+                </packer>
+                <entityhandler classname="com.sap.tc.buildplugin.pp.entity.EHDeployArchive">
+                    <entitytype type="PAR"/>
+                    <property key="packer-location" value="par"/>
+                    <property key="path" value="portal/${parFileName}.${suffix}"/>
+                    <property key="file" value="${dc_gen_tempDir}/${parFileName}.${suffix}"/>
+                </entityhandler>
+                #if($par_useWebContainer && $dc_util.isDefinedSourceFolder("src.config") )
+                    #set ($escapedParName = $portaltech_tools.escapeConfigName("${parFileName}"))
+                    <packer location="configarchive" type="filesystem">
+                        <property key="attributes" value="SAP-J2EE-Module[container-type[ConfigFwkContainer]]"/>
+                    </packer>
+                    <entityhandler classname="com.sap.tc.buildplugin.pp.entity.EHDeployArchive">
+                        <entitytype type="configarchive"/>
+                        <property key="packer-location" value="configarchive"/>
+                        <property key="path" value="portal/${escapedParName}.configarchive"/>
+                        <property key="file" value="${dc_gen_tempDir}/tmp.config/${escapedParName}.configarchive"/>
+                    </entityhandler>
+                #end
+            #EndPackPP()
+        #end
+    #EndTarget()
+
+    #StartTargetDep("createDeployArchive" "createPublicParts")
+        #if ($do_build_sda == true)
+            ##
+            ## Step 6: Create deployment descriptor. Only required for Standalone DCs
+            ##
+            <echo message="Creating portalapp-dd.xml"/>
+            #if($deploytype == "online")
+                #CreateDefaultJ2EEEngineDescriptor("${dc_gen_tempDir}/sda-dd.xml")
+                #set($archiveType = "sap.com~j2ee.EAR_SDA")
+            #else
+                #BeginCreateSDAFSDescriptor("${dc_gen_tempDir}/sda-dd.xml" "${dc_name}")
+                    <fileset id="${dc_name}" displayname="${dc_name}" description="${dc_name}" deploydir="${com.sap.portal.deploy.pcd}"/>
+                #EndCreateSDADescriptor()
+                #set($archiveType = "sap.com~SDA")
+            #end
+
+            ## create application-j2ee-engine.xml with startup-mode "always"
+
+            $antBase.taskdef("createappj2ee", "com.sap.tools.ant.taskdefs.ApplicationJ2EEEngineTask")
+            <createappj2ee file="${dc_gen_tempDir}/application-j2ee-engine.xml" providername="${dc_vendor}" startupmode="always"/>
+            ##
+            ## Step 7: create SDA for standalone DCs
+            ##
+            #BeginCreateDeployFile($archiveType "${dc_deployDir}/${dc_deployFile}.sda" "${dc_gen_tempDir}/sda-dd.xml" $dc_depend_assemblyPPs)
+                <option key="update-descriptors" value="true"/>
+                <descriptor file="${dc_gen_tempDir}/application-j2ee-engine.xml" type="application-j2ee-engine.xml" destpath="META-INF/application-j2ee-engine.xml"/>
+                <module file="${dc_gen_tempDir}/${parFileName}.${suffix}" attributes="${deploy_attributes}"/>
+                #if($par_useWebContainer)
+                    #if ($dc_util.isDefinedSourceFolder("src.config") )
+                    #set ($escapedParName = $portaltech_tools.escapeConfigName("${parFileName}"))
+                    <module file="${dc_gen_tempDir}/tmp.config/${escapedParName}.configarchive" attributes="SAP-J2EE-Module[container-type[ConfigFwkContainer]]"/>
+                    #end
+                #end
+            #EndCreateDeployFile()
+        #else
+            ## move the par file to a "local" folder for now. We can not put
+            ## it in the deploy folder since that causes problems with CMS.
+            #MkDir("${dc_gen_variantDir}/local")
+            <copy file="${dc_gen_tempDir}/${parFileName}.${suffix}" todir="${dc_gen_variantDir}/local"/>
+            ## if no SDA copy par to deploy folder for direct deployment.
+            ##<copy file="${dc_gen_tempDir}/${parFileName}.${suffix}" todir="${dc_deployDir}"/>
+        #end
+    #EndTarget()
+#end
+
+

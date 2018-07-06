@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<application>
+  <application-config/>
+  <components>
+    <component name="MyPortalComponent">
+      <component-config>
+        <property name="ClassName" value="de.quindata.demo.MyPortalComponent"/>
+      </component-config>
+      <component-profile/>
+    </component>
+  </components>
+  <services/>
+</application>

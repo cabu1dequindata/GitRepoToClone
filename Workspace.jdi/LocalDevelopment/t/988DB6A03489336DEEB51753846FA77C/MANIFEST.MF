@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+DC-Name: rwz-test
+DC-Type: Software Component Description
+DC-Vendor: quindata.com
+Implementation-Title: rwz-test
+Implementation-Vendor: quindata.com
+Implementation-Version: localDevelopment 20180706134516
+SC-Name: RWZ-TEST
+SC-Vendor: quindata.com
+
+Name: build-information
+Build-Counter: 20180706134516
+Build-Date: 2018-07-06
+Build-Location: localDevelopment
+Build-Time: 15:45:16 GMT+02:00 (CEST)
+Created-By: DC BuildTool
+Source-Location: cabu1de@ham00797
+

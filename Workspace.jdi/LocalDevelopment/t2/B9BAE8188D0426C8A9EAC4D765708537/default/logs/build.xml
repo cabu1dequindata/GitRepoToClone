@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    development component
+                     name: demo/war
+                   vendor: quindata.com
+                     type: J2EE
+                 sub-type: WebModule
+              type-vendor: sap.com
+
+       software component
+                     name: RWZ-TEST
+                   vendor: quindata.com
+
+                 location: localDevelopment
+          source location: cabu1de@ham00797
+            build variant: default
+
+    building on ham00797, Windows 10/amd64, version 10.0
+    using Java VM 'Java HotSpot(TM) 64-Bit Server VM', version 25.171-b11 (Oracle Corporation)
+    build started at 2018-07-06 15:45:22 GMT+02:00 (CEST)
+
+    Build Plugin 'WebModulePlugin', Version 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:49 +0100, CL245679)
+    detailed versions:
+    sap.com:tc/bi/anttasks#def     7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:47 +0100, CL245679)
+    sap.com:tc/bi/bp/webmodule#web 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:49 +0100, CL245679)
+    sap.com:tc/bi/core#def         7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:28:22 +0100, CL245679)
+    sap.com:tc/bi/exception#def    7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:46 +0100, CL245679)
+    sap.com:tc/bi/extddicdb#def    7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:53 +0100, CL245679)
+    sap.com:tc/bi/extsql#def       7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:48 +0100, CL245679)
+    sap.com:tc/bi/framework#def    7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:03 +0100, CL245679)
+    sap.com:tc/bi/i18n#def         7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:41 +0100, CL245679)
+    sap.com:tc/bi/javatech#def     7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:43 +0100, CL245679)
+    sap.com:tc/bi/jdoc#def         7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:46 +0100, CL245679)
+    sap.com:tc/bi/jdoc/util#def    7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:30 +0100, CL245679)
+    sap.com:tc/bi/jlincbs#def      7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:27:16 +0100, CL245679)
+    sap.com:tc/bi/settings#version 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:25:32 +0100, CL245679)
+    sap.com:tc/bi/util#util        7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:14 +0100, CL245679)
+    sap.com:tc/bi/velocity#def     7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:40 +0100, CL245679)
+    sap.com:tc/bi/xml#def          7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:26:43 +0100, CL245679)
+ -->
+<project name="DC Build"
+         default="build"
+         basedir=".">
+<taskdef name="checkfileset" classname="com.sap.tools.ant.taskdefs.EmptyFilesetCheck"/>
+<taskdef name="jlinppcheck" classname="com.sap.tc.buildplugin.pp.ant.JLinEECheckTask"/>
+<taskdef name="pppacker" classname="com.sap.tc.buildplugin.pp.PPPackTask"/>
+<taskdef name="propertybag" classname="com.sap.tools.ant.taskdefs.PropertyBag"/>
+<taskdef name="timer" classname="com.sap.tools.ant.taskdefs.Timer"/>
+<taskdef name="xlf2prop" classname="com.sap.tc.buildplugin.util.XlfConverter"/>
+
+<target name="compile">
+<mkdir dir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B9BAE8188D0426C8A9EAC4D765708537\classes"/>
+<!-- begin generator extension type 'sap.com~sqlj' for generator id 'sap.com~javac' -->
+<!-- No *.sqlj files found, skipping SQLJ preprocessing. -->
+<!-- end generator extension type 'sap.com~sqlj' for generator id 'sap.com~javac' -->
+<!-- begin generator id 'sap.com~javac', type 'sap.com~javac' -->
+<echo message="Starting Java compiler using the current JVM"/>
+<timer/>
+<echo message="Settings:"/>
+<echo message="        debug: on"/>
+<echo message="     optimize: off"/>
+<echo message="  deprecation: default"/>
+<echo message="      verbose: default"/>
+<echo message="     encoding: UTF-8"/>
+<echo message="       source: default"/>
+<echo message="       target: default"/>
+<echo message="  source path: C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\demo\war\_comp\source"/>
+<echo message="   class path:"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\ENGFACADE\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\ec~java~jsf~api.jar"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\ENGFACADE\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\engine.jee5.facade.jar"/>
+<echo message="      C:\git\ws\Workspace.jdi\LocalDevelopment\ENGFACADE\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\orpersistence_client_lib_filtered.jar"/>
+<echo message="   output dir: C:\git\ws\Workspace.jdi\LocalDevelopment\t\B9BAE8188D0426C8A9EAC4D765708537\classes"/>
+<checkfileset fail="false">
+<fileset dir="C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\demo\war\_comp\source">
+<include name="**/*.class"/>
+</fileset>
+</checkfileset>
+<javac includeAntRuntime="no"
+       destdir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B9BAE8188D0426C8A9EAC4D765708537\classes"
+       encoding="UTF-8"
+       deprecation="false"
+       debug="on"
+       tempdir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B9BAE8188D0426C8A9EAC4D765708537">
+<src path="C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\demo\war\_comp\source"/>
+<include name="**/*.java"/>
+<classpath>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\ENGFACADE\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\ec~java~jsf~api.jar"/>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\ENGFACADE\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\engine.jee5.facade.jar"/>
+<pathelement location="C:\git\ws\Workspace.jdi\LocalDevelopment\ENGFACADE\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\orpersistence_client_lib_filtered.jar"/>
+</classpath>
+</javac>
+<timer message="Java compilation finished in "/>
+<!-- end generator id 'sap.com~javac', type 'sap.com~javac' -->
+<!-- begin generator extension type 'sap.com~jlin' for generator id 'sap.com~javac' -->
+<!-- JLin disabled. -->
+<!-- end generator extension type 'sap.com~jlin' for generator id 'sap.com~javac' -->
+<!-- begin generator extension type 'sap.com~sqlj' for generator id 'sap.com~javac' -->
+<!-- No *.sqlj files found, skipping SQLJ post-processing. -->
+<!-- end generator extension type 'sap.com~sqlj' for generator id 'sap.com~javac' -->
+<!-- begin generator extension type 'sap.com~jdo' for generator id 'sap.com~javac' -->
+<!-- No *.jdo files found, skipping JDO enhancer. -->
+<!-- end generator extension type 'sap.com~jdo' for generator id 'sap.com~javac' -->
+<!-- begin generator extension type 'sap.com~xlf2prop' for generator id 'sap.com~javac' -->
+<echo message="Start XLF conversion"/>
+<timer/>
+<xlf2prop todir="C:\git\ws\Workspace.jdi\LocalDevelopment\t\B9BAE8188D0426C8A9EAC4D765708537\classes">
+<fileset dir="C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\demo\war\_comp\source"/>
+</xlf2prop>
+<timer message="XLF conversion finished in "/>
+<!-- end generator extension type 'sap.com~xlf2prop' for generator id 'sap.com~javac' -->
+<!-- begin generator extension type 'sap.com~jdoc' for generator id 'sap.com~javac' -->
+<!-- Javadoc generation disabled. -->
+<!-- end generator extension type 'sap.com~jdoc' for generator id 'sap.com~javac' -->
+</target>
+
+<target name="createPublicParts" depends="compile">
+<timer/>
+<pppacker ppname="war">
+</pppacker>
+<timer message="Packing of public part 'war' finished in "/>
+<jlinppcheck/>
+</target>
+
+<target name="build" depends="compile,createPublicParts">
+
+</target>
+</project>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mapping version="1.0">
+<development-component component-type="J2EE" name="demo/war" src-archive="quindata.com~demo~war~war_srcarchive.zip" sub-type="WebModule" type-vendor="sap.com" vendor="quindata.com">
+<sourcefolder srcfolderpath="source">
+<sourceelement path="de/quindata/demo/MyTestServlet.java"/>
+</sourcefolder>
+</development-component>
+</mapping>

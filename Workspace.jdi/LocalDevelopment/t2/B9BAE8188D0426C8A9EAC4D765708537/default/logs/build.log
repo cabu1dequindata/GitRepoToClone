@@ -1,0 +1,111 @@
+Development Component Build (2018-07-06 15:45:21 GMT+01:00 (CEST))
+  Component name: demo/war
+  Component vendor: quindata.com
+  SC compartment: RWZ-TEST
+  Configuration: LocalDevelopment
+  Location: localDevelopment
+  Source code location: cabu1de@ham00797
+  DC root folder: C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\demo\war\_comp\
+  DC type: J2EE
+  DC subtype: WebModule
+  Host: ham00797
+
+DC Model check:
+   DC is available locally
+   validating dependency to build plugin "sap.com/tc/bi/bp/webmodule"
+   validating dependency to  public part "api" of DC "sap.com/engine.jee5.facade"
+   DC model check OK
+
+Start build plugin:
+   using build plugin: sap.com/tc/bi/bp/webmodule
+   starting build plugin from : C:\git\ws\Workspace.jdi\LocalDevelopment\SAP_BUILDT\sap.com\tc\bi\bp\webmodule\_comp\gen\default\public\web\
+
+
+
+Build Plugin 'WebModulePlugin', Version 7.30 SP 7 (NW750CORE_07_REL, built on 2017-02-24 21:24:49 +0100, CL245679)
+   development component:  demo/war (quindata.com)
+      software component:  RWZ-TEST (quindata.com)
+                location:  localDevelopment
+                    type:  J2EE, subtype WebModule
+           build variant:  default
+         source location:  cabu1de@ham00797
+         output location:  C:\git\ws\Workspace.jdi\LocalDevelopment\t2\B9BAE8188D0426C8A9EAC4D765708537\default
+       generation folder:  C:\git\ws\Workspace.jdi\LocalDevelopment\t\B9BAE8188D0426C8A9EAC4D765708537
+       plugin start time:  2018-07-06 15:45:21 GMT+02:00 (CEST)
+                 Java VM:  Java HotSpot(TM) 64-Bit Server VM, 25.171-b11 (1.8, Oracle Corporation)
+
+
+General options:
+  convert *.xlf to *.properties: yes
+  include sources for debugging: yes
+ 
+
+
+Package folder ".apt_generated" exists but is empty and will be ignored.
+Checking path lengths for sources
+Path length checks finished in 0 seconds
+ 
+Preparing data context..
+Data context preparation finished in 0.141 seconds
+ 
+Creating Ant build file..
+  Creating output file: C:\git\ws\Workspace.jdi\LocalDevelopment\t2\B9BAE8188D0426C8A9EAC4D765708537\default\logs\build.xml
+  Using Java class:     com.sap.tc.buildplugin.BuildWebModule
+Build file creation finished in 0.141 seconds
+ 
+Starting Ant..
+  Using build file:     C:\git\ws\Workspace.jdi\LocalDevelopment\t2\B9BAE8188D0426C8A9EAC4D765708537\default\logs\build.xml
+  Using build target:   build
+  Using Ant version:    1.7.1
+ 
+compile:
+      [echo] Starting Java compiler using the current JVM
+      [echo] Settings:
+      [echo]         debug: on
+      [echo]      optimize: off
+      [echo]   deprecation: default
+      [echo]       verbose: default
+      [echo]      encoding: UTF-8
+      [echo]        source: default
+      [echo]        target: default
+      [echo]   source path: C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\demo\war\_comp\source
+      [echo]    class path:
+      [echo]       C:\git\ws\Workspace.jdi\LocalDevelopment\ENGFACADE\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\ec~java~jsf~api.jar
+      [echo]       C:\git\ws\Workspace.jdi\LocalDevelopment\ENGFACADE\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\engine.jee5.facade.jar
+      [echo]       C:\git\ws\Workspace.jdi\LocalDevelopment\ENGFACADE\sap.com\engine.jee5.facade\_comp\gen\default\public\api\lib\java\orpersistence_client_lib_filtered.jar
+      [echo]    output dir: C:\git\ws\Workspace.jdi\LocalDevelopment\t\B9BAE8188D0426C8A9EAC4D765708537\classes
+     [javac] Compiling 1 source file to C:\git\ws\Workspace.jdi\LocalDevelopment\t\B9BAE8188D0426C8A9EAC4D765708537\classes
+     [timer] Java compilation finished in 0.969 seconds
+ 
+      [echo] Start XLF conversion
+  [xlf2prop] Found 0 XLF files to convert in folder "source"
+     [timer] XLF conversion finished in 0.015 seconds
+ 
+ 
+createPublicParts:
+  [pppacker] Packing public part 'war'
+  [pppacker] Packed   4 files for entity quindata.com~demo~war (WAR)
+  [pppacker] Packed 1 entity for public part 'war'
+     [timer] Packing of public part 'war' finished in 0.25 seconds
+ 
+ 
+build:
+ 
+Ant runtime 1.875 seconds
+ 
+Ant build finished OK
+ 
+Build plugin finished at 2018-07-06 15:45:24 GMT+02:00 (CEST)
+Total build plugin runtime: 2.562 seconds
+ 
+Build finished with WARNING
+
+==== Post-Processing ====   started at 2018-07-06 15:45:24.526 CEST
+Comparison of previous and actual build results took: 0.969 seconds
+
+Copy the build results 
+  from: C:\git\ws\Workspace.jdi\LocalDevelopment\t2\B9BAE8188D0426C8A9EAC4D765708537\default\
+  to:   C:\git\ws\Workspace.jdi\LocalDevelopment\RWZ-TEST\quindata.com\demo\war\_comp\gen\default\
+
+The build results of the following public parts were not copied, since they have not changed:
+  war

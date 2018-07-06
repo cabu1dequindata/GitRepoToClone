@@ -39,6 +39,7 @@
 <sc-compartment name="FRAMEWORK" root="FRAMEWORK"/>
 <sc-compartment name="SERVERCORE" root="SERVERCORE"/>
 <sc-compartment name="UISAPUI5_JAVA" root="UISAPUI5_JAVA"/>
+<sc-compartment name="RWZ-TEST" root="RWZ-TEST"/>
 <sc-compartment name="BPEM-CONTENT" root="BPEM-CONTENT"/>
 <sc-compartment name="WSRM" root="WSRM"/>
 </sc-compartments>

@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+DC-Name: demo/war
+DC-SubType: WebModule
+DC-Type: J2EE
+DC-Vendor: quindata.com
+Implementation-Title: demo/war
+Implementation-Vendor: quindata.com
+Implementation-Version: localDevelopment 20180706134522
+SC-Name: RWZ-TEST
+SC-Vendor: quindata.com
+
+Name: build-information
+Build-Counter: 20180706134522
+Build-Date: 2018-07-06
+Build-Location: localDevelopment
+Build-Time: 15:45:22 GMT+02:00 (CEST)
+Created-By: DC BuildTool
+Source-Location: cabu1de@ham00797
+
